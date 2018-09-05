@@ -1,0 +1,17 @@
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+ <h3>Latest messages</h3>
+{% if commentsList %}
+    <ul>
+    {% for comment in commentsList %}
+        <li></a>{{ comment.text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No messages are available.</p>
+{% endif %}
+
