@@ -25,7 +25,7 @@ SECRET_KEY = 'del)m-y!5t!4igzc%&$s@wn^&k1%g1ip8&@)so^pz2c%c_(t4^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['18.219.224.201']
 
 
 # Application definition
@@ -88,11 +88,12 @@ def get_env_variable(var_name):
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': get_env_variable('DATABASE_NAME'),
-        'USER': get_env_variable('DATABASE_USER'),
-        'PASSWORD': get_env_variable('DATABASE_PASSWORD'),
-        'HOST': '127.0.0.1',
-        'PORT': '',
+        'NAME': 'commentsapp',
+        'USER': 'pguser',
+        'PASSWORD': '123456',
+        'HOST': '0.0.0.0',
+        'PORT': 5432,
+        'CHARSET': 'UTF8'
     }
 }
 

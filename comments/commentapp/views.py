@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.utils import timezone
+from datetime import datetime
 
 from .models import Comment
 from .forms import Form
@@ -13,7 +13,7 @@ def index(request):
         comment = Comment(
             text = info['text'],
             ip_address = get_client_ip(request),
-            pub_date = timezone.now())
+            pub_date = datetime.now(tzinfo='America/Santiago'))
 
         comment.save()
     form = Form()
@@ -29,3 +29,5 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
+

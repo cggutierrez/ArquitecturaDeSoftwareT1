@@ -8,7 +8,11 @@
 {% if commentsList %}
     <ul>
     {% for comment in commentsList %}
-        <li></a>{{ comment.text }}</a></li>
+        <li>
+            </a>{{ comment.text }}</a>
+            </a>{{ comment.ip_address }}</a>
+            </a>{{ comment.pub_date }}</a>
+        </li>
     {% endfor %}
     </ul>
 {% else %}
