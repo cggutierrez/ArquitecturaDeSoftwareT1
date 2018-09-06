@@ -8,12 +8,12 @@ from .forms import Form
 def index(request):
 
     if request.method == 'POST':
-        info = request.POST
 
         comment = Comment(
-            text = info['text'],
+            text = request.POST['text'],
             ip_address = get_client_ip(request),
-            pub_date = datetime.now(tzinfo='America/Santiago'))
+            pub_date = datetime.now()
+            )
 
         comment.save()
     form = Form()
